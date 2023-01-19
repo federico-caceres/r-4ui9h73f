@@ -6,14 +6,13 @@ class App extends Component {
   constructor(){
     super();
     this.state ={
-      valueRepeat: ''
+      repeatedValue: ''
     }
   }
 
   repeat = (e) => {
-    const valor = e.target.value
     this.setState({
-      valueRepeat: valor
+      repeatedValue: e.target.value
     })
   }
 
@@ -21,8 +20,8 @@ class App extends Component {
     return (
       <div>
         <h1>Un repetidor</h1>
-        <input type="text" onKeyUp={this.repeat} placeholder="Empieza a escribir algo" />
-        <p className="repeater">{this.state.valueRepeat}</p>
+        <input type="text" onChange={this.repeat} placeholder="Empieza a escribir algo"/>
+        <p className="repeater">{this.state.repeatedValue}</p>
       </div>
     );
   }
